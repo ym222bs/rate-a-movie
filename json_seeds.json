@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Titanic",
+        "genre": "Drama",
+        "year": "1990",
+        "ratings": "2"
+    },
+    {
+        "title": "Men in black",
+        "genre": "Sci-fi/Comedy",
+        "year": "2014",
+        "ratings": "6"
+    },
+    {
+        "title": "Alien",
+        "genre": "Sci-fi",
+        "year": "2012",
+        "ratings": "8"
+    },
+    {
+        "title": "Jurassic Park",
+        "genre": "Sci-fi/Action",
+        "year": "2015",
+        "ratings": "7"
+    }
+]

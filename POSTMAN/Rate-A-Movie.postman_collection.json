@@ -1,0 +1,939 @@
+{
+	"info": {
+		"_postman_id": "8dba9978-49c4-4504-b24a-7d83479c5c1f",
+		"name": "Rate-A-Movie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{url}}/user/register 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4d5ca073-c656-42b6-a438-a272d0da1319",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Lisa Lee\",\n\t\"password\":\"test123\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/user/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user/register Handle error, Invalid property",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4d5ca073-c656-42b6-a438-a272d0da1319",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userme\":\"Lisa Lee\",\n\t\"password\":\"test123\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/user/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user/register 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Mr Coffee\",\n\t\"password\":\"test123\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/user/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user/register 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Mr Burns\",\n\t\"password\":\"test123\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/user/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user/register 3 Handle error, Duplicated",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Mr Burns\",\n\t\"password\":\"test123\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/user/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2c1914f6-19dd-4766-a851-9347fd9d541f",
+						"exec": [
+							"var data = pm.response.json();\r",
+							"pm.environment.set('token', data.token);\r",
+							"\r",
+							"var userId = pm.response.json();\r",
+							"pm.environment.set('user_id', userId.user._id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Lisa Lee\",\n\t\"password\":\"test123\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/user/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user/login Handle error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2c1914f6-19dd-4766-a851-9347fd9d541f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Someone Unregistered\",\n\t\"password\":\"test123\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/user/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}movie 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a60dec68-8a9a-4117-ab6a-82a8a9e7c678",
+						"exec": [
+							"var data = pm.response.json();\r",
+							"pm.environment.set('movie_id', data.newMovie._id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiTXVtdSIsImlkIjoiNWM3YzM2MzVlMjNkNjgwMDA0MGYyY2EwIiwiaWF0IjoxNTUyNjgwMjcwLCJleHAiOjE1NTI2OTEwNzB9.Svg58PSVQ73Im53cQnJhfr2HJ3UpwgsfAAL-NLw5bpc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Spaceballs\",\r\n    \"genre\":\"Sci-fi/Action\",\r\n    \"year\":\"2015\",\r\n    \"ratings\":\"7\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/movie",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}movie 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a60dec68-8a9a-4117-ab6a-82a8a9e7c678",
+						"exec": [
+							"var data = pm.response.json();\r",
+							"pm.environment.set('movie_id', data.newMovie._id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiTXVtdSIsImlkIjoiNWM3YzM2MzVlMjNkNjgwMDA0MGYyY2EwIiwiaWF0IjoxNTUyNjgwMjcwLCJleHAiOjE1NTI2OTEwNzB9.Svg58PSVQ73Im53cQnJhfr2HJ3UpwgsfAAL-NLw5bpc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Titanic\",\r\n    \"genre\":\"Drama\",\r\n    \"year\":\"2015\",\r\n    \"ratings\":\"3\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/movie",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}movie 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a60dec68-8a9a-4117-ab6a-82a8a9e7c678",
+						"exec": [
+							"var data = pm.response.json();\r",
+							"pm.environment.set('movie_id', data.newMovie._id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiTXVtdSIsImlkIjoiNWM3YzM2MzVlMjNkNjgwMDA0MGYyY2EwIiwiaWF0IjoxNTUyNjgwMjcwLCJleHAiOjE1NTI2OTEwNzB9.Svg58PSVQ73Im53cQnJhfr2HJ3UpwgsfAAL-NLw5bpc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Jurassic Park\",\r\n    \"genre\":\"Sci-fi/Action\",\r\n    \"year\":\"2015\",\r\n    \"ratings\":\"7\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/movie",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}movie 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a60dec68-8a9a-4117-ab6a-82a8a9e7c678",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiTXVtdSIsImlkIjoiNWM3YzM2MzVlMjNkNjgwMDA0MGYyY2EwIiwiaWF0IjoxNTUyNjgwMjcwLCJleHAiOjE1NTI2OTEwNzB9.Svg58PSVQ73Im53cQnJhfr2HJ3UpwgsfAAL-NLw5bpc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Arrival\",\r\n    \"genre\":\"Sci-fi/Action\",\r\n    \"year\":\"2015\",\r\n    \"ratings\":\"5\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/movie",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}movie 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a60dec68-8a9a-4117-ab6a-82a8a9e7c678",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiTXVtdSIsImlkIjoiNWM3YzM2MzVlMjNkNjgwMDA0MGYyY2EwIiwiaWF0IjoxNTUyNjgwMjcwLCJleHAiOjE1NTI2OTEwNzB9.Svg58PSVQ73Im53cQnJhfr2HJ3UpwgsfAAL-NLw5bpc"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Alien\",\r\n    \"genre\":\"Sci-fi/Action\",\r\n    \"year\":\"2015\",\r\n    \"ratings\":\"7\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/movie",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/webhook 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00de8707-0f40-4940-84a0-0269dc61081a",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"url\":\"https://webhook.site/eaf58b69-853a-41c8-b7ff-e4abc4e44b32\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/webhook",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/webhook 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00de8707-0f40-4940-84a0-0269dc61081a",
+						"exec": [
+							"var data = pm.response.json();\r",
+							"pm.environment.set('hook_id', data.hook._id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"url\":\"https://skicka.hit.se\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/webhook",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/user/{{user_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/movies",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/movie/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/movie/{{movie_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movie",
+						"{{movie_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/webhooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/webhooks",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"webhooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/movie/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ratings\":\"5\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/movie/{{movie_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movie",
+						"{{movie_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/webhook/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/webhook/{{hook_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"webhook",
+						"{{hook_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/movie/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/movie/{{movie_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movie",
+						"{{movie_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiTmVkIEZsYW5kZXJzIiwiaWQiOiI1YzdiMTY4OTI2NmM2OTAwMDQ4ZDU1ZmUiLCJpYXQiOjE1NTE1NzI3ODAsImV4cCI6MTU1MTU4MzU4MH0.MYaiPsYIDditEj4WfngzwVRoMd2vGczZMvAmEexSQiM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Mrs Cruel\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/user/{{user_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/user/{{user_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
